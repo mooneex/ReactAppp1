@@ -20,12 +20,9 @@ export default class ItemList extends Component {
             })
     }
 
-    renderItems = (arr) => {
+    renderItems(arr) {
         return arr.map((item) => {
             const {id} = item;
-
-            if(!this.props.renderItem) debugger;
-
             const label = this.props.renderItem(item);
             return (
                 <li
@@ -36,7 +33,7 @@ export default class ItemList extends Component {
                     {label}
                 </li>)
         });
-    };
+    }
 
 
     render() {
