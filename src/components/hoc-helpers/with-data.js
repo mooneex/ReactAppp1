@@ -10,11 +10,13 @@ const withData = (View) => {
             loading: true,
             error: false
         };
+
         componentDidUpdate(prevProps) {
             if(this.props.getData !== prevProps.getData) {
                 this.update()
             }
         }
+
         componentDidMount() {
             this.update()
         }

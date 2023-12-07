@@ -21,6 +21,4 @@ Row.propTypes = {
     right: PropTypes.node
 };
 
-
-
 export default Row;

@@ -14,7 +14,6 @@ export default class RandomPlanet extends Component {
         updateInterval: PropTypes.number
     };
 
-
     swapiService = new SwapiService();
 
     state = {
@@ -41,7 +40,7 @@ export default class RandomPlanet extends Component {
         });
     };
 
-    
+
     onError = (err) => {
         this.setState({
             error: true,
@@ -60,13 +59,16 @@ export default class RandomPlanet extends Component {
 
 
     render() {
+
         const {planet, loading, error} = this.state;
 
         const hasData = !(loading || error);
+
         const errorMessage = error ? <ErrorIndicator /> : null;
+
         const spinner = loading ? <Spinner /> : null;
         const content = hasData ? <PlanetView planet={planet} /> : null;
-        
+
         return (
             <div className="random-planet jumbotron rounded">
                 {errorMessage}
@@ -76,13 +78,14 @@ export default class RandomPlanet extends Component {
         );
     }
 }
+
 const PlanetView = ({planet}) => {
     const { id, name, population, rotationPeriod, diameter} = planet;
 
     return (
         <React.Fragment>
             <img className="planet-image"
-                src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} />
+                 src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} />
             <div>
                 <h4>{name}</h4>
                 <ul className="list-group list-group-flush">

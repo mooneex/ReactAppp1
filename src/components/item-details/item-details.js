@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import ErrorButton from '../error-button';
 
+
 import './item-details.css';
 
 const Record = ({item, field, label}) => {
@@ -54,7 +55,7 @@ export default class ItemDetails extends Component {
         if(!item)
             return <span>Select a item from a list.</span>;
 
-            const {name} = this.state.item;
+        const {name} = this.state.item;
 
         return (
             <div className="item-details card">
